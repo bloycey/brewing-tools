@@ -4,7 +4,7 @@
 
 
 
-/* /ABV CALCULATOR APP - CHANGE 7 /
+/* /ABV CALCULATOR APP /
 
 // Brewing calculator.
 
