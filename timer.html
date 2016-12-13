@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="stylesheet" type="text/css" href="Vendors/css/Grid.css">
+        <title>Brewers Choice Utilities</title>
+        
+    </head>
+
+    <body>
+      <section id="brewing-timer">
+         <div class="progress-bar">
+        <div class="filler">
+         
+             <div class="row absolute">
+              <h1>Brewing Timer</h1>
+        <input class="tester" type="text" placeholder="How many seconds?" id="set-timer">
+        <p id="timer"></p>
+        <button onclick="setTimer();countDown()">Start Timer</button>
+                 <form class="timer-input">
+            <p> How long is your Boil? <input type="number" min="1" placeholder="E.g. 90" id="boilmins"></p>
+            <p> When is hop addition 1? <input type="number" min="1" placeholder="In minutes" id="hopmins1"></p>
+            <p> When is hop addition 2? <input type="number" min="1" placeholder="In minutes" id="hopmins2"></p>
+            <p> When is hop addition 3? <input type="number" min="1" placeholder="In minutes" id="hopmins3"></p>
+          </form>
+        <div class="home">
+         <a class="home-button" href="index.html">GO HOME</a>        
+        </div>
+        </div>
+             
+            
+         </div>   
+        </div>
+          
+          
+          
+          
+      
+        
+        </section>  
+    </body>
+    <script src="script.js"></script>
+</html>
+
+
+
