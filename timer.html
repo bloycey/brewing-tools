@@ -17,7 +17,7 @@
               <h1>Brewing Timer</h1>
        <!--- <input class="tester" type="text" placeholder="How many seconds?" id="set-timer"> -->
         <p id="timer"></p>
-                 <button onclick="beginBoil();setTimer();countDown()">Start Timer</button>
+                 <button class="timer-start" onclick="beginBoil();setTimer();countDown()">Start Timer</button>
         
                  <form class="timer-input">
                      
@@ -41,7 +41,7 @@
                          </div>
                          </div>
                      
-                     <div class="row hops-input-row">
+                     <div class="row hops-input-row" id="addition3">
                      <div class="col span-1-of-2">
                      <label for="hopmins3">When is your third hop addition?</label>
                      </div>
@@ -49,11 +49,13 @@
                      <input type="number" min="1" placeholder="10" id="hopmins3">
                          </div>
                          </div>
-                     
-                     
-                     
-                    
+               
           </form>
+                     <div class="row add-hop-btn">
+          
+          <button class="inline" onclick="addAddition()">+ Hop Addition</button>
+          <button class="inline" onclick="removeAddition()">- Hop Addition</button>    
+          </div>
         <div class="home">
          <a class="home-button" href="index.html">GO HOME</a>        
         </div>

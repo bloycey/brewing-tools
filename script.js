@@ -247,6 +247,7 @@ var fillerBar = document.querySelector(".filler");
 var firstHops;
 var secondHops;
 var thirdHops;
+var numberOfAdditions = 2;
 
 
 function setTimer() {
@@ -316,38 +317,45 @@ function countDown3() {
 
 
 
+function addAddition() {
+    
+    // Need to create these variables.
+    if(numberOfAdditions < 3) {
+        
+    numberOfAdditions++;
+    
+    //document.getElementById("addition" + numberOfAdditions).reset();
+    //document.querySelector(".ibus-contributed" + numberOfHops).innerHTML = "";
+    document.getElementById("addition" + numberOfAdditions).style.display = "block";   
+
+} else {
+    alert("Maximum 3 Hop Additions Allowed");
+}
+    
+};
+
+function removeAddition() {
+    
+    if(numberOfAdditions > 2) {
+    document.getElementById("hopmins" + numberOfAdditions).value ="";
+    document.getElementById("addition" + numberOfAdditions).style.display = "none";
+    //document.getElementById("addition" + numberOfAdditions).innerHTML = "";
+    numberOfAdditions--;
+    
+    } else {
+    alert("You must leave at least 2 hop additions!");
+    }
+    
+}
+
+
+
 /************ TO ADD *****************/
-/*
-function countDown() {
-    document.getElementById("timer").innerHTML = i;
-    i--;
-    fillerBar.style.height = ((i / originalCount)* 100) + "%"; 
-    if(i > 0){
-        setTimeout(countDown, 1000);
-    } else if (i=1){
-      document.getElementById("timer").innerHTML = "Time is up!";  
-    }    
-            
-        };
-*/
-/*
 
-
-// Set Total timer duration.
 //Add reset button.
-//Add sound at completion.
-//Need to convert to minutes.
-//Need to chain timers together.
+//Add sound at completion of each section.
 
 
-*/
-
-
-
-
-/*if (i == 5) {
-    document.querySelector(".filler").
-}*/
 
 
 

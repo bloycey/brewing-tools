@@ -98,7 +98,7 @@ body {
 }
 
 
-.absolute button {
+.timer-start {
     width: 20%;
     padding: 10px;
     display: block;
@@ -131,6 +131,10 @@ text-align: left;
     vertical-align: middle;
     text-align: left;
     display: inline-block;
+}
+
+#addition3 {
+    display:none;
 }
 
 
