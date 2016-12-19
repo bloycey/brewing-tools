@@ -244,25 +244,35 @@ Would need to add form space for Original Gravity.
 var i;
 var originalCount;
 var fillerBar = document.querySelector(".filler");
+var firstHops;
+var secondHops;
+var thirdHops;
 
 
 function setTimer() {
-originalCount = document.getElementById("set-timer").value;
-i = originalCount; 
+//originalCount = document.getElementById("set-timer").value;
+firstHops = document.getElementById("hopmins1").value;
+secondHops = document.getElementById("hopmins2").value;
+thirdHops = document.getElementById("hopmins3").value;
+    
+i = firstHops; 
 }
 
-
+// PASS THIS FUNCTION SOMETHING...
 function countDown() {
     document.getElementById("timer").innerHTML = i;
     i--;
-    fillerBar.style.height = ((i / originalCount)* 100) + "%"; 
+    fillerBar.style.height = ((i / firstHops)* 100) + "%"; 
     if(i > 0){
         setTimeout(countDown, 1000);
     } else if (i=1){
-      document.getElementById("timer").innerHTML = "Time is up!";  
-    }    
-            
-        };
+      document.getElementById("timer").innerHTML = "Time is up!";
+    var goForth = confirm("Add hops addition " + 1 + " now. Click 'ok' when you're ready to continue.");
+       if (goForth == true) {
+        return alert("success");
+        }
+    }
+};
 
 
 /************ TO ADD *****************/

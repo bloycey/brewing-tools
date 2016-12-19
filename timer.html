@@ -19,10 +19,44 @@
         <p id="timer"></p>
         <button onclick="setTimer();countDown()">Start Timer</button>
                  <form class="timer-input">
-            <p> How long is your Boil? <input type="number" min="1" placeholder="E.g. 90" id="boilmins"></p>
-            <p> When is hop addition 1? <input type="number" min="1" placeholder="In minutes" id="hopmins1"></p>
-            <p> When is hop addition 2? <input type="number" min="1" placeholder="In minutes" id="hopmins2"></p>
-            <p> When is hop addition 3? <input type="number" min="1" placeholder="In minutes" id="hopmins3"></p>
+                     
+                     <div class="row hops-input-row">
+                     <div class="col span-1-of-2">
+                     <label for="boilmins">How many minutes is your boil?</label>
+                     </div>
+                         <div class="col span-1-of-2">
+                     <input type="number" min="1" placeholder="60" id="boilmins">
+                         </div>
+                         </div>
+                     
+                     <div class="row hops-input-row">
+                     <div class="col span-1-of-2">
+                     <label for="hopmins1">When is your first hop addition?</label>
+                     </div>
+                         <div class="col span-1-of-2">
+                     <input type="number" min="1" placeholder="60" id="hopmins1">
+                         </div>
+                         </div>
+                     
+                     <div class="row hops-input-row">
+                     <div class="col span-1-of-2">
+                     <label for="hopmins2">When is your second hop addition?</label>
+                     </div>
+                         <div class="col span-1-of-2">
+                     <input type="number" min="1" placeholder="30" id="hopmins2">
+                         </div>
+                         </div>
+                     
+                     <div class="row hops-input-row">
+                     <div class="col span-1-of-2">
+                     <label for="hopmins3">When is your third hop addition?</label>
+                     </div>
+                         <div class="col span-1-of-2">
+                     <input type="number" min="1" placeholder="10" id="hopmins3">
+                         </div>
+                         </div>
+                     
+                    
           </form>
         <div class="home">
          <a class="home-button" href="index.html">GO HOME</a>        
