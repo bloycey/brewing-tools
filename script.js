@@ -247,13 +247,14 @@ var fillerBar = document.querySelector(".filler");
 var firstHops;
 var secondHops;
 var thirdHops;
+var numberOfAdditions = 2;
 
 
 function setTimer() {
 //originalCount = document.getElementById("set-timer").value;
-firstHops = document.getElementById("hopmins1").value;
-secondHops = document.getElementById("hopmins2").value;
-thirdHops = document.getElementById("hopmins3").value;
+firstHops = parseInt(document.getElementById("hopmins1").value) * 60;
+secondHops = parseInt(document.getElementById("hopmins2").value) * 60;
+thirdHops = parseInt(document.getElementById("hopmins3").value) * 60;
     
 i = firstHops; 
 }
@@ -265,15 +266,16 @@ function beginBoil() {
 }
 
 function countDown() {
-    document.getElementById("timer").innerHTML = i;
+    console.log(i);
+    var x = (i / 60).toFixed(0);
+    document.getElementById("timer").innerHTML = x;
     i--;
     //fillerBar.style.height = ((i / firstHops)* 100) + "%"; 
-    if(i > -1){
+    if(i >= secondHops){
         setTimeout(countDown, 1000);
-    } else if (i=true){
-      document.getElementById("timer").innerHTML = "Boil Completed!";
+    } else {
     var goForth = confirm("Add hops addition " + 2 + " now. Click 'ok' when you're ready to continue.");
-       if (goForth == true && (secondHops != false)) {
+       if (goForth == true && (secondHops > 0)) {
         i = secondHops;
         countDown2();
         }
@@ -281,15 +283,17 @@ function countDown() {
 };
 
 function countDown2() {
-    document.getElementById("timer").innerHTML = i;
+    console.log(i);
+    var x = (i / 60).toFixed(0);
+    document.getElementById("timer").innerHTML = x;
     i--;
     //fillerBar.style.height = ((i / secondHops)* 100) + "%"; 
-    if(i > -1){
+    if(i >= thirdHops){
         setTimeout(countDown2, 1000);
-    } else if (i=true){
+    } else {
       document.getElementById("timer").innerHTML = "Boil Completed!";
     var goForth = confirm("Add hops addition " + 3 + " now. Click 'ok' when you're ready to continue.");
-       if (goForth == true && (thirdHops != false)) {
+       if (goForth == true && (thirdHops > 0)) {
         i = thirdHops;
         countDown3();
         }
@@ -298,7 +302,9 @@ function countDown2() {
 
 
 function countDown3() {
-    document.getElementById("timer").innerHTML = i;
+    console.log(i);
+    var x = (i / 60).toFixed(0);
+    document.getElementById("timer").innerHTML = x;
     i--;
     //fillerBar.style.height = ((i / thirdHops)* 100) + "%"; 
     if(i > -1){
@@ -311,38 +317,45 @@ function countDown3() {
 
 
 
+function addAddition() {
+    
+    // Need to create these variables.
+    if(numberOfAdditions < 3) {
+        
+    numberOfAdditions++;
+    
+    //document.getElementById("addition" + numberOfAdditions).reset();
+    //document.querySelector(".ibus-contributed" + numberOfHops).innerHTML = "";
+    document.getElementById("addition" + numberOfAdditions).style.display = "block";   
+
+} else {
+    alert("Maximum 3 Hop Additions Allowed");
+}
+    
+};
+
+function removeAddition() {
+    
+    if(numberOfAdditions > 2) {
+    document.getElementById("hopmins" + numberOfAdditions).value ="";
+    document.getElementById("addition" + numberOfAdditions).style.display = "none";
+    //document.getElementById("addition" + numberOfAdditions).innerHTML = "";
+    numberOfAdditions--;
+    
+    } else {
+    alert("You must leave at least 2 hop additions!");
+    }
+    
+}
+
+
+
 /************ TO ADD *****************/
-/*
-function countDown() {
-    document.getElementById("timer").innerHTML = i;
-    i--;
-    fillerBar.style.height = ((i / originalCount)* 100) + "%"; 
-    if(i > 0){
-        setTimeout(countDown, 1000);
-    } else if (i=1){
-      document.getElementById("timer").innerHTML = "Time is up!";  
-    }    
-            
-        };
-*/
-/*
 
-
-// Set Total timer duration.
 //Add reset button.
-//Add sound at completion.
-//Need to convert to minutes.
-//Need to chain timers together.
+//Add sound at completion of each section.
 
 
-*/
-
-
-
-
-/*if (i == 5) {
-    document.querySelector(".filler").
-}*/
 
 
 
