@@ -251,9 +251,9 @@ var thirdHops;
 
 function setTimer() {
 //originalCount = document.getElementById("set-timer").value;
-firstHops = document.getElementById("hopmins1").value;
-secondHops = document.getElementById("hopmins2").value;
-thirdHops = document.getElementById("hopmins3").value;
+firstHops = parseInt(document.getElementById("hopmins1").value) * 60;
+secondHops = parseInt(document.getElementById("hopmins2").value) * 60;
+thirdHops = parseInt(document.getElementById("hopmins3").value) * 60;
     
 i = firstHops; 
 }
@@ -265,15 +265,16 @@ function beginBoil() {
 }
 
 function countDown() {
-    document.getElementById("timer").innerHTML = i;
+    console.log(i);
+    var x = (i / 60).toFixed(0);
+    document.getElementById("timer").innerHTML = x;
     i--;
     //fillerBar.style.height = ((i / firstHops)* 100) + "%"; 
-    if(i > -1){
+    if(i >= secondHops){
         setTimeout(countDown, 1000);
-    } else if (i=true){
-      document.getElementById("timer").innerHTML = "Boil Completed!";
+    } else {
     var goForth = confirm("Add hops addition " + 2 + " now. Click 'ok' when you're ready to continue.");
-       if (goForth == true && (secondHops != false)) {
+       if (goForth == true && (secondHops > 0)) {
         i = secondHops;
         countDown2();
         }
@@ -281,15 +282,17 @@ function countDown() {
 };
 
 function countDown2() {
-    document.getElementById("timer").innerHTML = i;
+    console.log(i);
+    var x = (i / 60).toFixed(0);
+    document.getElementById("timer").innerHTML = x;
     i--;
     //fillerBar.style.height = ((i / secondHops)* 100) + "%"; 
-    if(i > -1){
+    if(i >= thirdHops){
         setTimeout(countDown2, 1000);
-    } else if (i=true){
+    } else {
       document.getElementById("timer").innerHTML = "Boil Completed!";
     var goForth = confirm("Add hops addition " + 3 + " now. Click 'ok' when you're ready to continue.");
-       if (goForth == true && (thirdHops != false)) {
+       if (goForth == true && (thirdHops > 0)) {
         i = thirdHops;
         countDown3();
         }
@@ -298,7 +301,9 @@ function countDown2() {
 
 
 function countDown3() {
-    document.getElementById("timer").innerHTML = i;
+    console.log(i);
+    var x = (i / 60).toFixed(0);
+    document.getElementById("timer").innerHTML = x;
     i--;
     //fillerBar.style.height = ((i / thirdHops)* 100) + "%"; 
     if(i > -1){
