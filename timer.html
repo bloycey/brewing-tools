@@ -15,23 +15,17 @@
          
              <div class="row absolute">
               <h1>Brewing Timer</h1>
-        <input class="tester" type="text" placeholder="How many seconds?" id="set-timer">
+       <!--- <input class="tester" type="text" placeholder="How many seconds?" id="set-timer"> -->
         <p id="timer"></p>
-        <button onclick="setTimer();countDown()">Start Timer</button>
+                 <button onclick="beginBoil();setTimer();countDown()">Start Timer</button>
+        
                  <form class="timer-input">
                      
-                     <div class="row hops-input-row">
-                     <div class="col span-1-of-2">
-                     <label for="boilmins">How many minutes is your boil?</label>
-                     </div>
-                         <div class="col span-1-of-2">
-                     <input type="number" min="1" placeholder="60" id="boilmins">
-                         </div>
-                         </div>
+                    
                      
                      <div class="row hops-input-row">
                      <div class="col span-1-of-2">
-                     <label for="hopmins1">When is your first hop addition?</label>
+                     <label for="hopmins1">How long is your boil?</label>
                      </div>
                          <div class="col span-1-of-2">
                      <input type="number" min="1" placeholder="60" id="hopmins1">
@@ -55,6 +49,8 @@
                      <input type="number" min="1" placeholder="10" id="hopmins3">
                          </div>
                          </div>
+                     
+                     
                      
                     
           </form>

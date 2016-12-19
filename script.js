@@ -260,6 +260,10 @@ i = firstHops;
 
 // PASS THIS FUNCTION SOMETHING...
 
+function beginBoil() {
+    alert("Begin your boil and add your first hop addition now!");
+}
+
 function countDown() {
     document.getElementById("timer").innerHTML = i;
     i--;
@@ -268,7 +272,7 @@ function countDown() {
         setTimeout(countDown, 1000);
     } else if (i=true){
       document.getElementById("timer").innerHTML = "Boil Completed!";
-    var goForth = confirm("Add hops addition " + 1 + " now. Click 'ok' when you're ready to continue.");
+    var goForth = confirm("Add hops addition " + 2 + " now. Click 'ok' when you're ready to continue.");
        if (goForth == true && (secondHops != false)) {
         i = secondHops;
         countDown2();
@@ -284,7 +288,7 @@ function countDown2() {
         setTimeout(countDown2, 1000);
     } else if (i=true){
       document.getElementById("timer").innerHTML = "Boil Completed!";
-    var goForth = confirm("Add hops addition " + 2 + " now. Click 'ok' when you're ready to continue.");
+    var goForth = confirm("Add hops addition " + 3 + " now. Click 'ok' when you're ready to continue.");
        if (goForth == true && (thirdHops != false)) {
         i = thirdHops;
         countDown3();
@@ -299,14 +303,11 @@ function countDown3() {
     //fillerBar.style.height = ((i / thirdHops)* 100) + "%"; 
     if(i > -1){
         setTimeout(countDown3, 1000);
-    } else if (i=true){
-      document.getElementById("timer").innerHTML = "Boil Completed!";
-    var goForth = confirm("Add hops addition " + 3 + " now. Click 'ok' when you're ready to continue.");
-       if (goForth == true) {
+    } else {
+        document.getElementById("timer").innerHTML = "Boil Completed!";
         alert("Your boil is now done!")
         }
-    }
-};
+    };
 
 
 
