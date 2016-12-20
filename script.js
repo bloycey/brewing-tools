@@ -246,7 +246,7 @@ var originalCount;
 var fillerBar = document.querySelector(".filler");
 var firstHops;
 var secondHops;
-var thirdHops;
+var thirdHops = "";
 var numberOfAdditions = 2;
 
 
@@ -272,7 +272,7 @@ function countDown() {
     i--;
     //fillerBar.style.height = ((i / firstHops)* 100) + "%"; 
     if(i >= secondHops){
-        setTimeout(countDown, 1000);
+        setTimeout(countDown, 100);
     } else {
     var goForth = confirm("Add hops addition " + 2 + " now. Click 'ok' when you're ready to continue.");
        if (goForth == true && (secondHops > 0)) {
@@ -289,26 +289,31 @@ function countDown2() {
     i--;
     //fillerBar.style.height = ((i / secondHops)* 100) + "%"; 
     if(i >= thirdHops){
-        setTimeout(countDown2, 1000);
-    } else {
-      document.getElementById("timer").innerHTML = "Boil Completed!";
+        setTimeout(countDown2, 100);
+    } else if (i == thirdHops - 1) {
     var goForth = confirm("Add hops addition " + 3 + " now. Click 'ok' when you're ready to continue.");
        if (goForth == true && (thirdHops > 0)) {
         i = thirdHops;
         countDown3();
-        }
-    }
-};
+        console.log('success1');
+       }
+        } else {
+        countDown3();
+        console.log('success2');
+    } 
+    };
 
 
 function countDown3() {
+    
     console.log(i);
     var x = (i / 60).toFixed(0);
     document.getElementById("timer").innerHTML = x;
     i--;
+    
     //fillerBar.style.height = ((i / thirdHops)* 100) + "%"; 
     if(i > -1){
-        setTimeout(countDown3, 1000);
+        setTimeout(countDown3, 100);  
     } else {
         document.getElementById("timer").innerHTML = "Boil Completed!";
         alert("Your boil is now done!")
