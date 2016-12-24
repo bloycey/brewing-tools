@@ -242,19 +242,29 @@ Would need to add form space for Original Gravity.
 
 
 var i;
+var z;
 var originalCount;
 var fillerBar = document.querySelector(".filler");
 var firstHops;
 var secondHops;
 var thirdHops = "";
+var fourthHops = "";
+var firstHopsSeconds;
+var secondHopsSeconds;
+var thirdHopsSeconds;
 var numberOfAdditions = 2;
 
 
 function setTimer() {
 //originalCount = document.getElementById("set-timer").value;
-firstHops = parseInt(document.getElementById("hopmins1").value) * 60;
-secondHops = parseInt(document.getElementById("hopmins2").value) * 60;
-thirdHops = parseInt(document.getElementById("hopmins3").value) * 60;
+    
+firstHops = parseInt(document.getElementById("hopmins1").value);  
+secondHops = parseInt(document.getElementById("hopmins2").value);  
+thirdHops = parseInt(document.getElementById("hopmins3").value);  
+    
+firstHopsSeconds = parseInt(document.getElementById("hopmins1").value) * 60;
+secondHopsSeconds = parseInt(document.getElementById("hopmins2").value) * 60;
+thirdHopsSeconds = parseInt(document.getElementById("hopmins3").value) * 60;
     
 i = firstHops; 
 }
@@ -265,7 +275,39 @@ function beginBoil() {
     alert("Begin your boil and add your first hop addition now!");
 }
 
-function countDown() {
+
+function interviewQuestion(job) {
+    if (job === 'designer') {
+        return function(name) {
+            console.log(name + ', can you please explain what UX design is?');
+        }
+    } else if (job === 'teacher') {
+        return function(name) {
+            console.log('What subject do you teach, ' + name + '?')
+        }
+        
+    } else {
+        return function(name) {
+            console.log('Hello ' + name + ', what do you do?');
+        }
+    }
+};
+
+var teacherQuestion = interviewQuestion('teacher');
+var designerQuestion = interviewQuestion('designer');
+
+teacherQuestion('John');
+designerQuestion('Jane');
+
+//IF you need to pass multiple parameters down the chain you can also do this:
+
+interviewQuestion('teacher')('Mark');
+
+
+
+
+
+/*function countDown() {
     console.log(i);
     var x = (i / 60).toFixed(0);
     document.getElementById("timer").innerHTML = x;
@@ -280,31 +322,35 @@ function countDown() {
         countDown2();
         }
     }
+};*/
+
+function countDown(currentTime, timeUntilNextAddition) {
+    console.log(currentTime);
+    currentTime--;
+    var x = (currentTime / 60).toFixed(0);
+    document.getElementById("timer").innerHTML = x;
+    
+    if (currentTime == firstHops -1) {
+        alert("Begin your boil and add your first hop addition now!");
+        setTimeout(countDown(currentTime, timeUntilNextAddition),100);
+    } else if (currentTime > timeUntilNextAddition) {
+        setTimeout(countDown(currentTime, timeUntilNextAddition),100);
+    } else if (currentTime == secondHops) {
+        alert('Add your second hop addition now!');
+        setTimeout(countDown(secondHops, thirdHops),100);
+    } else if ((currentTime == thirdHops) && (fourthHops == true)) {
+        alert('Add your third hop addition now!');
+        setTimeout(countDown(thirdHops, fourthHops),100);
+    } else if ((currentTime == thirdHops) && (fourthHops == false)) {
+        alert('Add your third hop addition now!');
+        setTimeout(countDown(thirdHops, 0),100);
+    } else if (currentTime == 0) {
+        alert('Your boil is done');
+    } 
 };
 
-function countDown2() {
-    console.log(i);
-    var x = (i / 60).toFixed(0);
-    document.getElementById("timer").innerHTML = x;
-    i--;
-    //fillerBar.style.height = ((i / secondHops)* 100) + "%"; 
-    if(i >= thirdHops){
-        setTimeout(countDown2, 100);
-    } else if (i == thirdHops - 1) {
-    var goForth = confirm("Add hops addition " + 3 + " now. Click 'ok' when you're ready to continue.");
-       if (goForth == true && (thirdHops > 0)) {
-        i = thirdHops;
-        countDown3();
-        console.log('success1');
-       }
-        } else {
-        countDown3();
-        console.log('success2');
-    } 
-    };
 
-
-function countDown3() {
+/*function countDown3() {
     
     console.log(i);
     var x = (i / 60).toFixed(0);
@@ -319,7 +365,7 @@ function countDown3() {
         alert("Your boil is now done!")
         }
     };
-
+*/
 
 
 function addAddition() {
