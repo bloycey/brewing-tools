@@ -332,21 +332,20 @@ function countDown(currentTime, timeUntilNextAddition) {
     
     if (currentTime == firstHops -1) {
         alert("Begin your boil and add your first hop addition now!");
-        setTimeout(countDown(currentTime, timeUntilNextAddition),100);
+        setTimeout(countDown(currentTime, timeUntilNextAddition),1000);
     } else if (currentTime > timeUntilNextAddition) {
-        setTimeout(countDown(currentTime, timeUntilNextAddition),100);
+        setTimeout(countDown(currentTime, timeUntilNextAddition),1000);
     } else if (currentTime == secondHops) {
         alert('Add your second hop addition now!');
-        setTimeout(countDown(secondHops, thirdHops),100);
-    } else if ((currentTime == thirdHops) && (fourthHops == true)) {
+        setTimeout(countDown(secondHops, thirdHops),1000); 
+     } else if (currentTime == thirdHops) {
         alert('Add your third hop addition now!');
-        setTimeout(countDown(thirdHops, fourthHops),100);
-    } else if ((currentTime == thirdHops) && (fourthHops == false)) {
-        alert('Add your third hop addition now!');
-        setTimeout(countDown(thirdHops, 0),100);
+        setTimeout(countDown(thirdHops, fourthHops),1000);
     } else if (currentTime == 0) {
         alert('Your boil is done');
-    } 
+    } else {
+        setTimeout(countDown(currentTime, 0),1000);
+    }
 };
 
 
