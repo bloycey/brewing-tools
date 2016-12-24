@@ -249,6 +249,12 @@ var firstHops;
 var secondHops;
 var thirdHops = "";
 var fourthHops = "";
+var fifthHops = "";
+var sixthHops = "";
+var seventhHops = "";
+var eighthHops = "";
+var ninthHops = "";
+var tenthHops = "";
 var firstHopsSeconds;
 var secondHopsSeconds;
 var thirdHopsSeconds;
@@ -260,7 +266,14 @@ function setTimer() {
     
 firstHops = parseInt(document.getElementById("hopmins1").value);  
 secondHops = parseInt(document.getElementById("hopmins2").value);  
-thirdHops = parseInt(document.getElementById("hopmins3").value);  
+thirdHops = parseInt(document.getElementById("hopmins3").value); 
+fourthHops = parseInt(document.getElementById("hopmins4").value);
+fifthHops = parseInt(document.getElementById("hopmins5").value);
+sixthHops = parseInt(document.getElementById("hopmins6").value);
+seventhHops = parseInt(document.getElementById("hopmins7").value);
+eighthHops = parseInt(document.getElementById("hopmins8").value);
+ninthHops = parseInt(document.getElementById("hopmins9").value);
+tenthHops = parseInt(document.getElementById("hopmins10").value);
     
 firstHopsSeconds = parseInt(document.getElementById("hopmins1").value) * 60;
 secondHopsSeconds = parseInt(document.getElementById("hopmins2").value) * 60;
@@ -271,64 +284,17 @@ i = firstHops;
 
 // PASS THIS FUNCTION SOMETHING...
 
-function beginBoil() {
-    alert("Begin your boil and add your first hop addition now!");
-}
-
-
-function interviewQuestion(job) {
-    if (job === 'designer') {
-        return function(name) {
-            console.log(name + ', can you please explain what UX design is?');
-        }
-    } else if (job === 'teacher') {
-        return function(name) {
-            console.log('What subject do you teach, ' + name + '?')
-        }
-        
-    } else {
-        return function(name) {
-            console.log('Hello ' + name + ', what do you do?');
-        }
-    }
-};
-
-var teacherQuestion = interviewQuestion('teacher');
-var designerQuestion = interviewQuestion('designer');
-
-teacherQuestion('John');
-designerQuestion('Jane');
-
-//IF you need to pass multiple parameters down the chain you can also do this:
-
-interviewQuestion('teacher')('Mark');
-
-
-
-
-
-/*function countDown() {
-    console.log(i);
-    var x = (i / 60).toFixed(0);
-    document.getElementById("timer").innerHTML = x;
-    i--;
-    //fillerBar.style.height = ((i / firstHops)* 100) + "%"; 
-    if(i >= secondHops){
-        setTimeout(countDown, 100);
-    } else {
-    var goForth = confirm("Add hops addition " + 2 + " now. Click 'ok' when you're ready to continue.");
-       if (goForth == true && (secondHops > 0)) {
-        i = secondHops;
-        countDown2();
-        }
-    }
-};*/
-
 function countDown(currentTime, timeUntilNextAddition) {
     console.log(currentTime);
     currentTime--;
     var x = (currentTime / 60).toFixed(0);
-    document.getElementById("timer").innerHTML = x;
+    
+    if (x >= 1) {
+      document.getElementById("timer").innerHTML = x;   
+    } else {
+      document.getElementById("timer").innerHTML = "Less than 1 minute left!";  
+    };
+   
     
     if (currentTime == firstHops -1) {
         alert("Begin your boil and add your first hop addition now!");
@@ -348,9 +314,45 @@ function countDown(currentTime, timeUntilNextAddition) {
         alert('Add your third hop addition now!');
         setTimeout(function() {
             countDown(thirdHops, fourthHops);
+        },1000);  
+     } else if (currentTime == fourthHops) {
+        alert('Add your fourth hop addition now!');
+        setTimeout(function() {
+            countDown(fourthHops, fifthHops);
         },1000);
+     } else if (currentTime == fifthHops) {
+        alert('Add your fifth hop addition now!');
+        setTimeout(function() {
+            countDown(fifthHops, sixthHops);
+        },1000);
+     } else if (currentTime == sixthHops) {
+        alert('Add your sixth hop addition now!');
+        setTimeout(function() {
+            countDown(sixthHops, seventhHops);
+        },1000);
+    } else if (currentTime == seventhHops) {
+        alert('Add your seventh hop addition now!');
+        setTimeout(function() {
+            countDown(seventhHops, eighthHops);
+        },1000);
+    } else if (currentTime == eighthHops) {
+        alert('Add your eighth hop addition now!');
+        setTimeout(function() {
+            countDown(eighthHops, ninthHops);
+        },1000);
+      } else if (currentTime == ninthHops) {
+        alert('Add your ninth hop addition now!');
+        setTimeout(function() {
+            countDown(ninthHops, tenthHops);
+        },1000);
+      } else if (currentTime == tenthHops) {
+        alert('Add your tenth hop addition now!');
+        setTimeout(function() {
+            countDown(tenthHops, 0);
+        },1000);   
     } else if (currentTime == 0) {
         alert('Your boil is done');
+        document.getElementById("timer").innerHTML = "Boil Completed";
     } else {
         setTimeout(function() {
             countDown(currentTime, 0);
@@ -359,28 +361,11 @@ function countDown(currentTime, timeUntilNextAddition) {
 };
 
 
-/*function countDown3() {
-    
-    console.log(i);
-    var x = (i / 60).toFixed(0);
-    document.getElementById("timer").innerHTML = x;
-    i--;
-    
-    //fillerBar.style.height = ((i / thirdHops)* 100) + "%"; 
-    if(i > -1){
-        setTimeout(countDown3, 100);  
-    } else {
-        document.getElementById("timer").innerHTML = "Boil Completed!";
-        alert("Your boil is now done!")
-        }
-    };
-*/
-
 
 function addAddition() {
     
     // Need to create these variables.
-    if(numberOfAdditions < 3) {
+    if(numberOfAdditions < 10) {
         
     numberOfAdditions++;
     
@@ -389,7 +374,7 @@ function addAddition() {
     document.getElementById("addition" + numberOfAdditions).style.display = "block";   
 
 } else {
-    alert("Maximum 3 Hop Additions Allowed");
+    alert("Maximum 10 Hop Additions Allowed");
 }
     
 };
