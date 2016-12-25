@@ -294,6 +294,7 @@ function countDown(currentTime, timeUntilNextAddition) {
     currentTime--;
     var audio = new Audio('css/audio/Seinfeld.mp3');
     audio.preload = "auto";
+    audio.loop = true;
     var x = (currentTime / 60).toFixed(0);
     
     if (x >= 1) {
@@ -304,12 +305,12 @@ function countDown(currentTime, timeUntilNextAddition) {
    
     
     if (currentTime == firstHops -1) {    
-    
+    audio.play();
     sweetAlert({
         title: "Begin Boil",
         text: "Begin your boil and add your first hop addition now!"
     }, function () {
-        
+        audio.pause();
         setTimeout(function() {
             countDown(currentTime, timeUntilNextAddition);
         },1000)});
@@ -321,94 +322,119 @@ function countDown(currentTime, timeUntilNextAddition) {
     
     
     } else if (currentTime == secondHops) {
+        audio.play();
         sweetAlert({
             title: "Second Hops",
             text: "Add your second hop addition now!"
         }, function () {
             
-          setTimeout(function() {
+            audio.pause();
+            setTimeout(function() {
             countDown(secondHops, thirdHops);
         },1000)});
           
     
     } else if (currentTime == thirdHops) {
+        audio.play();
         sweetAlert({
             title: "Third Hops",
             text: "Add your third hop addition now!"
         }, function () {
+          audio.pause();
           setTimeout(function() {
             countDown(thirdHops, fourthHops);
         },1000)});
          
     
     } else if (currentTime == fourthHops) {
+        audio.play();
         sweetAlert({
             title: "Fourth Hops",
             text: "Add your fourth hop addition now!"
         }, function () {
+        audio.pause();
          setTimeout(function() {
             countDown(fourthHops, fifthHops);
         },1000)});
             
         
      } else if (currentTime == fifthHops) {
-        sweetAlert({
+        audio.play();
+         sweetAlert({
             title: "Fifth Hops",
             text: "Add your fifth hop addition now!"
         }, function () {
+            audio.pause();
            setTimeout(function() {
             countDown(fifthHops, sixthHops);
         },1000)});
        
      
      } else if (currentTime == sixthHops) {
-        sweetAlert({
+         audio.play();
+         sweetAlert({
             title: "Sixth Hops",
             text: "Add your sixth hop addition now!"
         }, function () {
+        audio.pause();
           setTimeout(function() {
             countDown(sixthHops, seventhHops);
         },1000)});
        
     } else if (currentTime == seventhHops) {
+        audio.play();
         sweetAlert({
             title: "Seventh Hops",
             text: "Add your seventh hop addition now!"
         }, function () {
+        audio.pause();
          setTimeout(function() {
             countDown(seventhHops, eighthHops);
         },1000)});
         
     } else if (currentTime == eighthHops) {
+        audio.play();
         sweetAlert({
             title: "Eighth Hops",
             text: "Add your eighth hop addition now!"
         }, function () {
+            audio.pause();
           setTimeout(function() {
             countDown(eighthHops, ninthHops);
         },1000)});
        
       } else if (currentTime == ninthHops) {
-        sweetAlert({
+        audio.play();
+          sweetAlert({
             title: "Ninth Hops",
             text: "Add your ninth hop addition now!"
         }, function () {
+        audio.pause();
          setTimeout(function() {
             countDown(ninthHops, tenthHops);
         },1000)});
        
       } else if (currentTime == tenthHops) {
-        sweetAlert({
+        audio.play();
+          sweetAlert({
             title: "Tenth Hops",
             text: "Add your tenth hop addition now!"
         }, function () {
+        audio.pause();
            setTimeout(function() {
             countDown(tenthHops, 0);
         },1000)});
          
     } else if (currentTime == 0) {
-        sweetAlert('Your boil is done');
+        audio.play();
+        sweetAlert({
+            title: "Boil Completed",
+            text: "Your boil is done. You're one step closer to beer. :)"
+        }, function () {
+         audio.pause();
         document.getElementById("timer").innerHTML = "Boil Completed";
+        });
+        
     } else {
         setTimeout(function() {
             countDown(currentTime, 0);
