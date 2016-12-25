@@ -284,9 +284,16 @@ i = firstHops;
 
 // PASS THIS FUNCTION SOMETHING...
 
+
+
+
+
+
 function countDown(currentTime, timeUntilNextAddition) {
     console.log(currentTime);
     currentTime--;
+    var audio = new Audio('css/audio/Seinfeld.mp3');
+    audio.preload = "auto";
     var x = (currentTime / 60).toFixed(0);
     
     if (x >= 1) {
@@ -296,8 +303,12 @@ function countDown(currentTime, timeUntilNextAddition) {
     };
    
     
-    if (currentTime == firstHops -1) {
-        alert("Begin your boil and add your first hop addition now!");
+    if (currentTime == firstHops -1) {    
+    
+    function boilAlert() {
+    sweetAlert("Begin your boil and add your first hop addition now!", afterBoilFunction)    
+    }  
+
         setTimeout(function() {
             countDown(currentTime, timeUntilNextAddition);
         },1000);

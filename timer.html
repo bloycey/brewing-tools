@@ -4,6 +4,8 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="stylesheet" type="text/css" href="Vendors/css/Grid.css">
+        <link rel="stylesheet" type="text/css" href="Vendors/css/sweetalert.css">
+        
         <title>Brewers Choice Utilities</title>
         
     </head>
@@ -11,7 +13,6 @@
     <body>
       <section id="brewing-timer">
          <div class="progress-bar">
-        <div class="filler">
          
              <div class="row absolute">
               <h1>Brewing Timer</h1>
@@ -20,8 +21,6 @@
                  <button class="timer-start" onclick="setTimer();countDown(firstHops, secondHops);">Start Timer</button>
         
                  <form class="timer-input">
-                     
-                    
                      
                      <div class="row hops-input-row">
                      <div class="col span-1-of-2">
@@ -129,7 +128,7 @@
              
             
          </div>   
-        </div>
+        
           
           
           
@@ -138,7 +137,9 @@
         
         </section>  
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="script.js"></script>
+    <script src="Vendors/js/sweetalert.min.js"></script>
 </html>
 
 

@@ -52,7 +52,10 @@ body {
 #brewing-timer {
     position: relative;
     padding: 0;
-    background: url(css/img/background1.png);
+    background: url(css/img/food-night-drink-glass-2.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
 }
 
 #brewing-timer h1 {
@@ -76,10 +79,10 @@ body {
 
 .absolute {
     position: absolute;
-    top:20vh;
+    top:10vh;
     left:35vw;
     width: 30vw;
-    background-color: rgba(255,255,255,0.7);
+    //background-color: rgba(255,255,255,1);
     padding:20px;
     border-radius: 20px;
 }
