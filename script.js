@@ -455,6 +455,7 @@ function removeAddition() {
 
 //Add reset button.
 //Add sound at completion of each section.
+// Stylize. 
 
 
 
