@@ -318,53 +318,96 @@ function countDown(currentTime, timeUntilNextAddition) {
         setTimeout(function() {
             countDown(currentTime, timeUntilNextAddition);
         },1000);
+    
+    
     } else if (currentTime == secondHops) {
-        alert('Add your second hop addition now!');
-        setTimeout(function() {
+        sweetAlert({
+            title: "Second Hops",
+            text: "Add your second hop addition now!"
+        }, function () {
+            
+          setTimeout(function() {
             countDown(secondHops, thirdHops);
-        },1000); 
-     } else if (currentTime == thirdHops) {
-        alert('Add your third hop addition now!');
-        setTimeout(function() {
+        },1000)});
+          
+    
+    } else if (currentTime == thirdHops) {
+        sweetAlert({
+            title: "Third Hops",
+            text: "Add your third hop addition now!"
+        }, function () {
+          setTimeout(function() {
             countDown(thirdHops, fourthHops);
-        },1000);  
-     } else if (currentTime == fourthHops) {
-        alert('Add your fourth hop addition now!');
-        setTimeout(function() {
+        },1000)});
+         
+    
+    } else if (currentTime == fourthHops) {
+        sweetAlert({
+            title: "Fourth Hops",
+            text: "Add your fourth hop addition now!"
+        }, function () {
+         setTimeout(function() {
             countDown(fourthHops, fifthHops);
-        },1000);
+        },1000)});
+            
+        
      } else if (currentTime == fifthHops) {
-        alert('Add your fifth hop addition now!');
-        setTimeout(function() {
+        sweetAlert({
+            title: "Fifth Hops",
+            text: "Add your fifth hop addition now!"
+        }, function () {
+           setTimeout(function() {
             countDown(fifthHops, sixthHops);
-        },1000);
+        },1000)});
+       
+     
      } else if (currentTime == sixthHops) {
-        alert('Add your sixth hop addition now!');
-        setTimeout(function() {
+        sweetAlert({
+            title: "Sixth Hops",
+            text: "Add your sixth hop addition now!"
+        }, function () {
+          setTimeout(function() {
             countDown(sixthHops, seventhHops);
-        },1000);
+        },1000)});
+       
     } else if (currentTime == seventhHops) {
-        alert('Add your seventh hop addition now!');
-        setTimeout(function() {
+        sweetAlert({
+            title: "Seventh Hops",
+            text: "Add your seventh hop addition now!"
+        }, function () {
+         setTimeout(function() {
             countDown(seventhHops, eighthHops);
-        },1000);
+        },1000)});
+        
     } else if (currentTime == eighthHops) {
-        alert('Add your eighth hop addition now!');
-        setTimeout(function() {
+        sweetAlert({
+            title: "Eighth Hops",
+            text: "Add your eighth hop addition now!"
+        }, function () {
+          setTimeout(function() {
             countDown(eighthHops, ninthHops);
-        },1000);
+        },1000)});
+       
       } else if (currentTime == ninthHops) {
-        alert('Add your ninth hop addition now!');
-        setTimeout(function() {
+        sweetAlert({
+            title: "Ninth Hops",
+            text: "Add your ninth hop addition now!"
+        }, function () {
+         setTimeout(function() {
             countDown(ninthHops, tenthHops);
-        },1000);
+        },1000)});
+       
       } else if (currentTime == tenthHops) {
-        alert('Add your tenth hop addition now!');
-        setTimeout(function() {
+        sweetAlert({
+            title: "Tenth Hops",
+            text: "Add your tenth hop addition now!"
+        }, function () {
+           setTimeout(function() {
             countDown(tenthHops, 0);
-        },1000);   
+        },1000)});
+         
     } else if (currentTime == 0) {
-        alert('Your boil is done');
+        sweetAlert('Your boil is done');
         document.getElementById("timer").innerHTML = "Boil Completed";
     } else {
         setTimeout(function() {
@@ -387,7 +430,7 @@ function addAddition() {
     document.getElementById("addition" + numberOfAdditions).style.display = "block";   
 
 } else {
-    alert("Maximum 10 Hop Additions Allowed");
+    sweetAlert("Maximum 10 Hop Additions Allowed");
 }
     
 };
@@ -401,7 +444,7 @@ function removeAddition() {
     numberOfAdditions--;
     
     } else {
-    alert("You must leave at least 2 hop additions!");
+    sweetAlert("You must leave at least 2 hop additions!");
     }
     
 }
