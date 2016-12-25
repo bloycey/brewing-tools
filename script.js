@@ -305,13 +305,15 @@ function countDown(currentTime, timeUntilNextAddition) {
     
     if (currentTime == firstHops -1) {    
     
-    function boilAlert() {
-    sweetAlert("Begin your boil and add your first hop addition now!", afterBoilFunction)    
-    }  
-
+    sweetAlert({
+        title: "Begin Boil",
+        text: "Begin your boil and add your first hop addition now!"
+    }, function () {
+        
         setTimeout(function() {
             countDown(currentTime, timeUntilNextAddition);
-        },1000);
+        },1000)});
+        
     } else if (currentTime > timeUntilNextAddition) {
         setTimeout(function() {
             countDown(currentTime, timeUntilNextAddition);
