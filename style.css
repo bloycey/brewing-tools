@@ -37,7 +37,7 @@ body {
 /* ----------------------------------------------- */
 /* REUSABLE COMPONENTS */
 /* ----------------------------------------------- */
-.row {
+/*.row {
   max-width: 1140px;
   margin: 0 auto; }
 
@@ -46,61 +46,13 @@ body {
 
 .box {
   padding: 1%; }
-
+*/
 /**************************************************/
-
-#brewing-timer {
-    position: relative;
-    padding: 0;
-    background: url(css/img/food-night-drink-glass-2.jpg);
-    background-size: cover;
-    background-position: center;
-    color: white;
-    
-}
 
 
 
 #brewing-timer h1 {
     text-align: center;
-}
-
-.progress-bar {
-    height: 100vh;
-    width: 100vw;
-    border: none;
-    
-}
-
-.filler {
-    height: 100%;
-    width: 100%;
-    background-color: #ffffff;
-    transition: 0.5s;
-
-}
-
-.absolute {
-    position: absolute;
-    top:10vh;
-    left:35vw;
-    width: 30vw;
-    //background-color: rgba(255,255,255,1);
-    padding:20px;
-    border-radius: 20px;
-}
-
-.tester {
-    margin-top: 20px;
-    padding: 20px;
-    font-size: 150%;
-    text-align: center;
-    width:50%;
-    margin-left:25%;
-}
-
-.absolute input:focus {
-    outline: none;
 }
 
 
@@ -118,57 +70,37 @@ body {
     font-size: 200%;
 }
 
-.home {
-margin-top: 20px;
-text-align: left;
-}
 
 .timer-input {
     margin-top: 20px;
 }
 
 .timer-input input {
-  
+    width: 50%;
+    margin-left: 25%;
     display:inline-block;
     vertical-align: middle;
 }
 
 .hops-input-row label {
     vertical-align: middle;
-    text-align: left;
-    display: inline-block;
+    text-align: center;
+    width: 100%
+}
+
+.hops-input-row {
+    padding: 18px 0;;
+}
+
+
+.add-hop-btn {
+    margin-top: 20px;
 }
 
 #addition3, #addition4, #addition5, #addition6, #addition7, #addition8, #addition9, #addition10 {
     display:none;
 }
 
-
-
-/*.absolute h1 {
-    text-align: center; 
-}
-
-.absolute input {
-    padding:30px;
-    background: rgba(244,244,244,0.35);
-    width: 10vw;
-}
-
-.absolute p {
-    width: 10vw;
-}
-
-.absolute button {
-    width: 5vw;
-    padding: 10px;
-}
-
-.absolute a {
-    width: 10vw;
-    top: 90vh;
-}
-*/
 
 
 
