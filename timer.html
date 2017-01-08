@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" type="text/css" href="Vendors/css/Grid.css">
+        <link rel="stylesheet" type="text/css" href="Vendors/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" href="Vendors/css/sweetalert.css">
         
         <title>Brewers Choice Utilities</title>
@@ -11,18 +11,38 @@
     </head>
 
     <body>
+     <div class="navbar navbar-default navbar-static-top">
+            
+              <div class="container">
+                  <div class="navbar-header">
+                  <a href="index.html" class="navbar-brand">Andrew's Brewing Tools</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>  
+            <span class="icon-bar"></span>  
+            <span class="icon-bar"></span>  
+                  </button>
+                  </div>
+                 
+        <ul class="nav navbar-nav navbar-right collapse navbar-collapse">
+        <li><a href="timer.html">BREW TIMER</a></li>
+        <li><a href="abv-calc.html">ABV CALCULATOR</a></li>
+        <li><a href="ibu-calc.html">IBU CALCULATOR</a></li>
+            
+        </ul>
+        </div>
+        </div>
       <section id="brewing-timer">
-         <div class="progress-bar">
+         
          
              <div class="row absolute">
               <h1>Brewing Timer</h1>
-       <!--- <input class="tester" type="text" placeholder="How many seconds?" id="set-timer"> -->
-        <p id="timer"></p>
-                 <button class="timer-start" onclick="setTimer();countDown(firstHops, secondHops);">Start Timer</button>
-        
-                 <form class="timer-input">
-                     
-                     <div class="row hops-input-row">
+    
+       
+                 
+        <div class="container">
+                 <form class="timer-input container col-md-4 col-md-offset-4">
+                      <p id="timer"></p>
+                     <div class="row hops-input-row boil">
                      <div class="col span-1-of-2">
                      <label for="hopmins1">How long is your boil?</label>
                      </div>
@@ -110,24 +130,19 @@
                          <div class="col span-1-of-2">
                      <input type="number" min="1" placeholder="1" id="hopmins10">
                          </div>
-                         </div>
-                     
-                     
-                     
-               
+                         </div> 
           </form>
-                     <div class="row add-hop-btn">
+            </div>
+        <div class="container col-md-4 col-md-offset-4 add-hop-btn">
           
           <button class="inline" onclick="addAddition()">+ Hop Addition</button>
-          <button class="inline" onclick="removeAddition()">- Hop Addition</button>    
+          <button class="inline" onclick="removeAddition()">- Hop Addition</button>
           </div>
-        <div class="home">
-         <a class="home-button" href="index.html">GO HOME</a>        
+        
         </div>
-        </div>
+          <button class="timer-start" onclick="setTimer();countDown(firstHops, secondHops);">Start Timer</button>
              
-            
-         </div>   
+         
         
           
           
@@ -138,6 +153,7 @@
         </section>  
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="Vendors/js/bootstrap.js"></script>
     <script src="script.js"></script>
     <script src="Vendors/js/sweetalert.min.js"></script>
 </html>

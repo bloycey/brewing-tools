@@ -3,13 +3,35 @@
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css">
-        <link rel="stylesheet" type="text/css" href="Vendors/css/Grid.css">
+        <link rel="stylesheet" type="text/css" href="Vendors/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="Vendors/css/sweetalert.css">
         <title>Brewers Choice Utilities</title>
-        <h1>IBU Calculator</h1>
     </head>
 
     <body>
-      <section id="calculate-ibu">
+        
+     <div class="navbar navbar-default navbar-static-top">
+            
+              <div class="container">
+                  <div class="navbar-header">
+                  <a href="index.html" class="navbar-brand">Andrew's Brewing Tools</a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle Navigation</span>
+            <span class="icon-bar"></span>  
+            <span class="icon-bar"></span>  
+            <span class="icon-bar"></span>  
+                  </button>
+                  </div>
+                 
+        <ul class="nav navbar-nav navbar-right collapse navbar-collapse">
+        <li><a href="timer.html">BREW TIMER</a></li>
+        <li><a href="abv-calc.html">ABV CALCULATOR</a></li>
+        <li><a href="ibu-calc.html">IBU CALCULATOR</a></li>
+            
+        </ul>
+        </div>
+        </div>
+        
+      <section class="container" id="calculate-ibu">
          <h1>Calculate IBU</h1>
          <form class="batch">
           
@@ -22,201 +44,203 @@
           </form>
           
           
-          <div class="row ibu-table headings">
+          <div class="row ibu-table headings hidden-xs">
               
             <div class="col span-1-of-8"> 
         
             </div>
-            <div class="col span-2-of-8">
+             <div class="col col-md-2 col-sm-2 col-md-offset-1 col-sm-2 col-sm-offset-1">
+                <h4>HOP ADDITION</h4>
+            </div>
+            <div class="col col-md-2 col-sm-2 col-sm-2">
                 <h4>Grams</h4>
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2 col-sm-2">
                 <h4>AA% of Hops</h4>
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2 col-sm-2">
                 <h4>Minutes in Boil</h4>
             </div>
-            <div class="col span-1-of-8">
+            <div class="col col-md-2 col-sm-2 col-sm-2">
                 <h4>IBUs</h4>
             </div>
+             
         </div>
           
           
           
           
-    <form id="ibu-calculator">
-        <form class="row ibu-table" id="hop1">
-        <div class="row">
-          
-            <div class="col span-1-of-8"> HOP 1.
-            </div>
-            <div class="col span-2-of-8">
-                <input type="number" min="0" placeholder="Grams" class="grams" id="grams1">
-            </div>
-            <div class="col span-2-of-8">
-                <input type="number" min="0" placeholder="% AA" class="aa" id="aa1">
-            </div>
-            <div class="col span-2-of-8">
-                <input type="number" min="0" placeholder="Minutes in Boil" class="mins-boil" id="minsboil1">
-            </div>
-            <div class="col span-1-of-8">
-                <p class="ibus-contributed1"></p>
-            </div>
-              </div>
-        </form>
+   
             
           
-        <form class="row ibu-table" id="hop2">
-            <div class="col span-1-of-8"> HOP 2.
+        <form class="row ibu-table" id="hop1">
+            <div class="col col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1"> HOP 1.
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
+                <input type="number" min="0" placeholder="Grams" class="grams" id="grams1">
+            </div>
+            <div class="col col-md-2 col-sm-2">
+                <input type="number" min="0" placeholder="% AA" class="aa" id="aa1">
+            </div>
+            <div class="col col-md-2 col-sm-2">
+                <input type="number" min="0" placeholder="Minutes in Boil" class="mins-boil" id="minsboil1">
+            </div>
+            <div class="col col-md-2 col-sm-2 col-sm-2">
+                <p class="ibus-contributed1"></p>
+            </div>
+        </form>
+        
+        <form class="row ibu-table" id="hop2">
+            <div class="col col-md-2 col-md-offset-1 col-sm-2 col-sm-offset-1"> HOP 2.
+            </div>
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="Grams" class="grams" id="grams2">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="% AA" class="aa" id="aa2">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="Minutes in Boil" class="mins-boil" id="minsboil2">
             </div>
-            <div class="col span-1-of-8">
+            <div class="col col-md-2 col-sm-2 col-sm-2">
                 <p class="ibus-contributed2"></p>
             </div>
         </form>
           
           <form class="row ibu-table" id="hop3">
-            <div class="col span-1-of-8"> HOP 3.
+            <div class="col col-md-2 col-sm-2 col-md-offset-1 col-sm-2 col-sm-offset-1"> HOP 3.
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="Grams" class="grams" id="grams3">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="% AA" class="aa" id="aa3">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="Minutes in Boil" class="mins-boil" id="minsboil3">
             </div>
-            <div class="col span-1-of-8">
+            <div class="col col-md-2 col-sm-2 col-md-offset-1 col-sm-2 col-sm-offset-1">
                 <p class="ibus-contributed3"></p>
             </div>
         </form>
           
               <form class="row ibu-table" id="hop4">
-            <div class="col span-1-of-8"> HOP 4.
+            <div class="col col-md-2 col-sm-2 col-md-offset-1 col-sm-2 col-sm-offset-1"> HOP 4.
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="Grams" class="grams" id="grams4">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="% AA" class="aa" id="aa4">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="Minutes in Boil" class="mins-boil" id="minsboil4">
             </div>
-            <div class="col span-1-of-8">
+            <div class="col col-md-2 col-sm-2 col-md-offset-1 col-sm-2 col-sm-offset-1">
                 <p class="ibus-contributed4"></p>
             </div>
         </form>
           
               <form class="row ibu-table" id="hop5">
-            <div class="col span-1-of-8"> HOP 5.
+            <div class="col col-md-2 col-sm-2 col-md-offset-1 col-sm-2 col-sm-offset-1"> HOP 5.
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="Grams" class="grams" id="grams5">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="% AA" class="aa" id="aa5">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="Minutes in Boil" class="mins-boil" id="minsboil5">
             </div>
-            <div class="col span-1-of-8">
+            <div class="col col-md-2 col-sm-2 col-md-offset-1 col-sm-2 col-sm-offset-1">
                 <p class="ibus-contributed5"></p>
             </div>
         </form>
           
               <form class="row ibu-table" id="hop6">
-            <div class="col span-1-of-8"> HOP 6.
+            <div class="col col-md-2 col-sm-2 col-md-offset-1 col-sm-2 col-sm-offset-1"> HOP 6.
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="Grams" class="grams" id="grams6">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="% AA" class="aa" id="aa6">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="Minutes in Boil" class="mins-boil" id="minsboil6">
             </div>
-            <div class="col span-1-of-8">
+            <div class="col col-md-2 col-sm-2 col-md-offset-1 col-sm-2 col-sm-offset-1">
                 <p class="ibus-contributed6"></p>
             </div>
         </form>
           
               <form class="row ibu-table" id="hop7">
-            <div class="col span-1-of-8"> HOP 7.
+            <div class="col col-md-2 col-sm-2 col-md-offset-1 col-sm-2 col-sm-offset-1"> HOP 7.
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="Grams" class="grams" id="grams7">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="% AA" class="aa" id="aa7">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="Minutes in Boil" class="mins-boil" id="minsboil7">
             </div>
-            <div class="col span-1-of-8">
+            <div class="col col-md-2 col-sm-2 col-md-offset-1 col-sm-2 col-sm-offset-1">
                 <p class="ibus-contributed7"></p>
             </div>
         </form>
           
           
               <form class="row ibu-table" id="hop8">
-            <div class="col span-1-of-8"> HOP 8.
+            <div class="col col-md-2 col-sm-2 col-md-offset-1 col-sm-2 col-sm-offset-1"> HOP 8.
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="Grams" class="grams" id="grams8">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="% AA" class="aa" id="aa8">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="Minutes in Boil" class="mins-boil" id="minsboil8">
             </div>
-            <div class="col span-1-of-8">
+            <div class="col col-md-2 col-sm-2 col-md-offset-1 col-sm-2 col-sm-offset-1">
                 <p class="ibus-contributed8"></p>
             </div>
         </form>
           
           
               <form class="row ibu-table" id="hop9">
-            <div class="col span-1-of-8"> HOP 9.
+            <div class="col col-md-2 col-sm-2 col-md-offset-1 col-sm-2 col-sm-offset-1"> HOP 9.
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="Grams" class="grams" id="grams9">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="% AA" class="aa" id="aa9">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="Minutes in Boil" class="mins-boil" id="minsboil9">
             </div>
-            <div class="col span-1-of-8">
+            <div class="col col-md-2 col-sm-2 col-md-offset-1 col-sm-2 col-sm-offset-1">
                 <p class="ibus-contributed9"></p>
             </div>
         </form>
           
               <form class="row ibu-table" id="hop10">
-            <div class="col span-1-of-8"> HOP 10.
+            <div class="col col-md-2 col-sm-2 col-md-offset-1 col-sm-2 col-sm-offset-1"> HOP 10.
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="Grams" class="grams" id="grams10">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0" placeholder="% AA" class="aa" id="aa10">
             </div>
-            <div class="col span-2-of-8">
+            <div class="col col-md-2 col-sm-2">
                 <input type="number" min="0"  placeholder="Minutes in Boil" class="mins-boil" id="minsboil10">
             </div>
-            <div class="col span-1-of-8">
+            <div class="col col-md-2 col-sm-2 col-md-offset-1 col-sm-2 col-sm-offset-1">
                 <p class="ibus-contributed10"></p>
             </div>
         </form>
@@ -243,8 +267,11 @@
           
             
         
-        <a href="index.html">GO HOME</a>
+        
         </section>  
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="Vendors/js/bootstrap.js"></script>
     <script src="script.js"></script>
+    <script src="Vendors/js/sweetalert.min.js"></script>
 </html>
