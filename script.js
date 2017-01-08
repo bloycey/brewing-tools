@@ -59,7 +59,7 @@ function getIbuData() {
 //First check if the Starting Gravity has been filled out. If so, get the Gravity Adjustment (ga), otherwise prompt them to fill it out.
     
 if ((document.getElementById("sg").value) == false) {
-    alert('Please set your Starting Gravity');
+    sweetAlert('Please set your Starting Gravity');
     return;
 } else {
  ga = ((document.getElementById("sg").value) - 1.050) / 0.2;   
@@ -164,7 +164,7 @@ function addHops() {
     document.getElementById("hop" + numberOfHops).style.display = "block";   
 
 } else {
-    alert("Maximum 10 Hops Allowed");
+    sweetAlert("Maximum 10 Hops Allowed");
 }
     
 };
@@ -180,7 +180,8 @@ function removeHops() {
     numberOfHops--;
     
     } else {
-    alert("You must leave at least 1 hop addition!");
+    sweetAlert("You must leave at least 1 hop addition!");
+    sweetAlert("You must leave at least 1 hop addition!");
     }
     
 }
