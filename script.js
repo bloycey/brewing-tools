@@ -480,7 +480,8 @@ function removeAddition() {
 /************ TO ADD *****************/
 
 //Add reset button.
-//Add sound at completion of each section.
+// Add tick box after 'ok' popup next to hop addition row.
+// Change to minutes rather than seconds.
 // Stylize. 
 
 
