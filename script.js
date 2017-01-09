@@ -358,7 +358,7 @@ document.getElementById("timer-stop").addEventListener('click',function(){
             title: "Second Hops",
             text: "Add your second hop addition now!"
         }, function () {
-            
+            document.querySelector(".icon-2").style.display = "initial";
             audio.pause();
             setTimeout(function() {
             countDown(secondHops, thirdHops);
@@ -371,6 +371,7 @@ document.getElementById("timer-stop").addEventListener('click',function(){
             title: "Third Hops",
             text: "Add your third hop addition now!"
         }, function () {
+        document.querySelector(".icon-3").style.display = "initial";
           audio.pause();
           setTimeout(function() {
             countDown(thirdHops, fourthHops);
@@ -383,6 +384,7 @@ document.getElementById("timer-stop").addEventListener('click',function(){
             title: "Fourth Hops",
             text: "Add your fourth hop addition now!"
         }, function () {
+        document.querySelector(".icon-4").style.display = "initial";
         audio.pause();
          setTimeout(function() {
             countDown(fourthHops, fifthHops);
@@ -395,6 +397,7 @@ document.getElementById("timer-stop").addEventListener('click',function(){
             title: "Fifth Hops",
             text: "Add your fifth hop addition now!"
         }, function () {
+             document.querySelector(".icon-5").style.display = "initial";
             audio.pause();
            setTimeout(function() {
             countDown(fifthHops, sixthHops);
@@ -407,6 +410,7 @@ document.getElementById("timer-stop").addEventListener('click',function(){
             title: "Sixth Hops",
             text: "Add your sixth hop addition now!"
         }, function () {
+        document.querySelector(".icon-6").style.display = "initial";
         audio.pause();
           setTimeout(function() {
             countDown(sixthHops, seventhHops);
@@ -418,6 +422,7 @@ document.getElementById("timer-stop").addEventListener('click',function(){
             title: "Seventh Hops",
             text: "Add your seventh hop addition now!"
         }, function () {
+        document.querySelector(".icon-7").style.display = "initial";
         audio.pause();
          setTimeout(function() {
             countDown(seventhHops, eighthHops);
@@ -429,6 +434,7 @@ document.getElementById("timer-stop").addEventListener('click',function(){
             title: "Eighth Hops",
             text: "Add your eighth hop addition now!"
         }, function () {
+            document.querySelector(".icon-8").style.display = "initial";
             audio.pause();
           setTimeout(function() {
             countDown(eighthHops, ninthHops);
@@ -440,6 +446,7 @@ document.getElementById("timer-stop").addEventListener('click',function(){
             title: "Ninth Hops",
             text: "Add your ninth hop addition now!"
         }, function () {
+        document.querySelector(".icon-9").style.display = "initial";
         audio.pause();
          setTimeout(function() {
             countDown(ninthHops, tenthHops);
@@ -451,6 +458,7 @@ document.getElementById("timer-stop").addEventListener('click',function(){
             title: "Tenth Hops",
             text: "Add your tenth hop addition now!"
         }, function () {
+        document.querySelector(".icon-10").style.display = "initial";
         audio.pause();
            setTimeout(function() {
             countDown(tenthHops, 0);
@@ -513,9 +521,7 @@ function removeAddition() {
 
 /************ TO ADD *****************/
 
-//Add reset button.
 // Add tick box after 'ok' popup next to hop addition row.
-// Change to minutes rather than seconds.
 // Stylize. 
 
 

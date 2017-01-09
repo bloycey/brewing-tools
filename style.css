@@ -104,6 +104,16 @@ html {
     text-align: center;
 }
 
+.glyphicon.glyphicon-ok {
+    font-size: 180%;
+    position: relative;
+    top: 7px;
+    left: 5px;
+    color: green;
+    border: none;
+    display: none;
+}
+
 #timer {
     margin-top: 10px;
     font-size: 200%;
@@ -117,6 +127,7 @@ html {
 
 .timer-input {
     margin-top: 20px;
+    position: relative;
 }
 
 .timer-input input {
