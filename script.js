@@ -265,16 +265,16 @@ var numberOfAdditions = 2;
 function setTimer() {
 //originalCount = document.getElementById("set-timer").value;
     
-firstHops = parseInt(document.getElementById("hopmins1").value);  
-secondHops = parseInt(document.getElementById("hopmins2").value);  
-thirdHops = parseInt(document.getElementById("hopmins3").value); 
-fourthHops = parseInt(document.getElementById("hopmins4").value);
-fifthHops = parseInt(document.getElementById("hopmins5").value);
-sixthHops = parseInt(document.getElementById("hopmins6").value);
-seventhHops = parseInt(document.getElementById("hopmins7").value);
-eighthHops = parseInt(document.getElementById("hopmins8").value);
-ninthHops = parseInt(document.getElementById("hopmins9").value);
-tenthHops = parseInt(document.getElementById("hopmins10").value);
+firstHops = parseInt(document.getElementById("hopmins1").value) * 60;  
+secondHops = parseInt(document.getElementById("hopmins2").value) * 60;  
+thirdHops = parseInt(document.getElementById("hopmins3").value) * 60; 
+fourthHops = parseInt(document.getElementById("hopmins4").value) * 60;
+fifthHops = parseInt(document.getElementById("hopmins5").value) * 60;
+sixthHops = parseInt(document.getElementById("hopmins6").value) * 60;
+seventhHops = parseInt(document.getElementById("hopmins7").value) * 60;
+eighthHops = parseInt(document.getElementById("hopmins8").value) * 60;
+ninthHops = parseInt(document.getElementById("hopmins9").value) * 60;
+tenthHops = parseInt(document.getElementById("hopmins10").value) * 60;
     
 firstHopsSeconds = parseInt(document.getElementById("hopmins1").value) * 60;
 secondHopsSeconds = parseInt(document.getElementById("hopmins2").value) * 60;
@@ -299,7 +299,7 @@ function countDown(currentTime, timeUntilNextAddition) {
     var x = (currentTime / 60).toFixed(0);
     
     if (x >= 1) {
-      document.getElementById("timer").innerHTML = x;   
+      document.getElementById("timer").innerHTML = "~ " + x + " minutes left";   
     } else {
       document.getElementById("timer").innerHTML = "Less than 1 minute left!";  
     };

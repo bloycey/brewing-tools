@@ -49,6 +49,40 @@ body {
 */
 /**************************************************/
 
+#calculate-abv {
+    height: 80vh;
+}
+
+.abv-calc h1 {
+ text-align: center;   
+}
+
+.inputs {
+    margin: 20vh 0;
+}
+
+.abv-calc input {
+    display: block;
+    text-align: left;
+    width: 80%;
+    margin: 5px auto;
+    padding: 10px 5px;
+}
+
+.grav-result {
+    text-align: center;
+    font-size: 200%;
+}
+
+.abv-calc button {
+   width: 40%;
+    margin-left: 30%;
+    margin-top: 20px;
+    padding: 10px 5px;
+}
+
+
+/*******************************/
 html {
     overflow-x: hidden;
 }
@@ -70,8 +104,13 @@ html {
 #timer {
     margin-top: 10px;
     font-size: 200%;
+    text-align: center;
+    animation: blinker 6s linear infinite;
 }
 
+@keyframes blinker {  
+  30% { opacity: 0; }
+}
 
 .timer-input {
     margin-top: 20px;
@@ -110,6 +149,15 @@ html {
 
 .grams, .aa, .mins-boil {
     max-width: 100%;
+}
+
+.header-row {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.batch-row {
+    padding-top: 20px;
 }
 
 .ibu-table {
@@ -153,17 +201,6 @@ text-align: center;
     margin-left: 10px;
 }
 
-.batch, .starting-grav {
-    display: inline-block;
-}
-
-.starting-grav {
-    padding-left: 20px;
-}
-
-.batch {
-    margin-left: 15%;
-}
 
 
 
