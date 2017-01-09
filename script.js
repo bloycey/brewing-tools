@@ -476,7 +476,15 @@ function removeAddition() {
     
 }
 
+$( "#timer-start" ).click(function() {
+$( "#timer-stop" ).show();
+$( "#timer-start" ).hide();    
+});
 
+$( "#timer-stop" ).click(function() {
+$( "#timer-start" ).show();
+$( "#timer-stop" ).hide();    
+});
 
 
 
