@@ -200,7 +200,7 @@ utilisation.length = 0;
 ibus.length = 0;
     
 
-document.getElementById("ibu-calculator").reset();
+/*document.getElementById("ibu-calculator").reset();*/
 document.getElementById("batch").value = "";
 document.getElementById("sg").value = "";
 document.querySelector(".ibus-contributed1").innerHTML = "";
@@ -475,6 +475,8 @@ function removeAddition() {
     }
     
 }
+
+
 
 
 
