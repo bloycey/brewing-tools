@@ -317,7 +317,6 @@ function countDown(currentTime, timeUntilNextAddition) {
 
 
 document.getElementById("timer-stop").addEventListener('click',function(){
-    console.log("Stop clicked");
     window.location.reload();
 });
     
@@ -520,8 +519,6 @@ function removeAddition() {
 
 
 /************ TO ADD *****************/
-
-// Add tick box after 'ok' popup next to hop addition row.
 // Stylize. 
 
 
