@@ -287,10 +287,40 @@ i = firstHops;
 
 
 
+document.getElementById("timer-start").addEventListener('click',function(){
+    document.getElementById("timer-stop").style.display = "block";
+    document.getElementById("timer-start").style.display = "none";
+});
+
+document.getElementById("timer-stop").addEventListener('click',function(){
+    document.getElementById("timer-start").style.display = "block";
+    document.getElementById("timer-stop").style.display = "none";
+});
+
+
+/*
+$( "#timer-start" ).click(function() {
+$( "#timer-stop" ).show();
+$( "#timer-start" ).hide();    
+});
+
+$( "#timer-stop" ).click(function() {
+$( "#timer-start" ).show();
+$( "#timer-stop" ).hide();
+});
+
+*/
 
 
 
 function countDown(currentTime, timeUntilNextAddition) {
+
+
+document.getElementById("timer-stop").addEventListener('click',function(){
+    console.log("Stop clicked");
+    window.location.reload();
+});
+    
     console.log(currentTime);
     currentTime--;
     var audio = new Audio('css/audio/Seinfeld.mp3');
@@ -305,7 +335,7 @@ function countDown(currentTime, timeUntilNextAddition) {
     };
    
     
-    if (currentTime == firstHops -1) {    
+   if (currentTime == firstHops -1) {    
     audio.play();
     sweetAlert({
         title: "Begin Boil",
@@ -434,8 +464,9 @@ function countDown(currentTime, timeUntilNextAddition) {
         }, function () {
          audio.pause();
         document.getElementById("timer").innerHTML = "Boil Completed";
+        document.getElementById("timer-stop").style.display = "none";
+        document.getElementById("timer-start").style.display = "block";
         });
-        
     } else {
         setTimeout(function() {
             countDown(currentTime, 0);
@@ -476,15 +507,7 @@ function removeAddition() {
     
 }
 
-$( "#timer-start" ).click(function() {
-$( "#timer-stop" ).show();
-$( "#timer-start" ).hide();    
-});
 
-$( "#timer-stop" ).click(function() {
-$( "#timer-start" ).show();
-$( "#timer-stop" ).hide();    
-});
 
 
 
